@@ -60,17 +60,17 @@ Try `python train.py -c config.json` to run code.
 Config files are in `.json` format:
 ```javascript
 {
-  "name": "Mnist_LeNet",        // training session name
+  "name": "BrainTumor_UNet",        // training session name
   "n_gpu": 1,                   // number of GPUs to use for training.
   
   "arch": {
-    "type": "MnistModel",       // name of model architecture to train
+    "type": "UNetModel",       // name of model architecture to train
     "args": {
 
     }                
   },
   "data_loader": {
-    "type": "MnistDataLoader",         // selecting data loader
+    "type": "tumorDataLoader",         // selecting data loader
     "args":{
       "data_dir": "data/",             // dataset path
       "batch_size": 64,                // batch size
