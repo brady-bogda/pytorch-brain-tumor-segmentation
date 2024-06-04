@@ -24,9 +24,9 @@
             "amsgrad": true
         }
     },
-    "loss": "nll_loss",
+    "loss": "binary_cross_entropy",
     "metrics": [
-        "accuracy", "top_k_acc"
+        "accuracy", "precision", "recall", "f1_score"
     ],
     "lr_scheduler": {
         "type": "StepLR",
