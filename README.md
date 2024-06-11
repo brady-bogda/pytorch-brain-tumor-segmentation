@@ -1,4 +1,4 @@
-# PyTorch Brain Tumor Detection with UNet
+# PyTorch Brain Tumor Segmentation with UNet
 
 ## Requirements
 * Python >= 3.5 (3.6 recommended)

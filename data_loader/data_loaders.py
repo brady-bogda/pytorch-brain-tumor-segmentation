@@ -5,6 +5,8 @@ import numpy as np
 import glob
 import os
 from PIL import Image
+import h5py
+import torch
 
 
 class tumorDataset(Dataset):
@@ -27,11 +29,20 @@ class tumorDataset(Dataset):
         return len(self.files)
 
     def __getitem__(self, idx):
-        img = Image.open(self.files[idx])
-        img = np.asarray(img)
+        with h5py.File(self.files[idx], 'r') as file:
+            img = file['image'][:]
+            mask = file['mask'][:]
+
+        img = img.transpose((2, 0, 1))
+        mask = mask.transpose((2, 0, 1))
+
+        img = torch.tensor(img, dtype=torch.float32)
+        mask = torch.tensor(mask, dtype=torch.float32)
+
         if self.transform:
             img = self.transform(img)
-        return img
+
+        return img, mask
 
 
 class tumorDataLoader(BaseDataLoader):
