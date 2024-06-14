@@ -6,6 +6,13 @@
 * tqdm (Optional for `test.py`)
 * tensorboard >= 1.14 (see [Tensorboard Visualization](#tensorboard-visualization))
 
+## Setup 
+```bash
+python -m venv .venv
+source /.venv/bin/activate
+pip install -r requirements.txt
+```
+
 ## Usage
 Try `python train.py -c config.json` to run code.
 

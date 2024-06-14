@@ -4,3 +4,5 @@ numpy
 tqdm
 tensorboard>=1.14
 h5py
+pandas
+matplotlib
